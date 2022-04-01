@@ -7,7 +7,7 @@
 
     <br />
     <span v-if="firstName != ''"> Bonjour {{ firstName }} </span>
-    <span v-else> Merci de saisir votre blaze </span>
+    <span v-else> Merci de saisir votre nom</span>
     <br />
 
     <button @click="direBonjour">Bonjour</button>
