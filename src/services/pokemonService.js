@@ -8,20 +8,22 @@ import axios from 'axios';
 
 export class PokemonService {
 
-
-
-
-
-    constructor() {
-
-    }
-
     getPokemon(id) {
         return new Promise((resolve, reject) => {
             axios.get('https://pokeapi.co/api/v2/pokemon/' + id)
                 .then(response => {
+                    // console.log(response.data.sprites.versions["generation-v"] ["black-white"].animated.front_default);
+                    // //pokemonData n'est pas un tableau mais un objet(json)
+                    // let pokemonData = response.data
+                    // let pokemonType = response.data.types;
 
-                    //pokemonData n'est pas un tableau mais un objet(json)
+                    // let typeTable = [];
+
+                    // for (let t = 0; t < pokemonType.length; t++) {
+                    //     typeTable.push(response.data.types[t].type.name);
+                    // }
+
+                    // let pokemon = new Pokemon()
 
                     let pokemonNumber = response.data.id
                     let pokemonWeight = response.data.weight
@@ -73,6 +75,7 @@ export class PokemonService {
                         let id = substrings[substrings.length - 2];
 
                         p.id = id
+                        p.image = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/" + id + ".gif"
                         pokemons.push(p)
                     })
                     resolve(pokemons)
@@ -89,6 +92,6 @@ export class PokemonService {
 
     }
 
-    
+
 
 }

@@ -10,7 +10,7 @@
     <div v-for="(obj, index) in pokemons" v-bind:key="index">
         <h1>
           <router-link v-bind:to="'/pokemons/' + obj.id">
-      {{ obj.name }} 
+      <img :src="obj.image" alt="image pokemon">  
         </router-link>
         </h1>
 
